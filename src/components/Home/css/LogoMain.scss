@@ -1,0 +1,75 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+$animation-time: 4s;
+
+.LogoMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.5)) contrast(2) brightness(2);
+  }
+
+  .LogoMain-brain_svg {
+    animation: LogoMain-brain $animation-time linear forwards;
+  }
+  .LogoMain-text_svg {
+    opacity: 0;
+    animation: LogoMain $animation-time linear forwards;
+    animation-delay: 2s;
+  }
+}
+
+@include keyframes(LogoMain) {
+  0%,
+  40% {
+    opacity: 0;
+  }
+  41% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(LogoMain-brain) {
+  0%,
+  30%,
+  40.99%,
+  43%,
+  45%,
+  71%,
+  69.99% {
+    opacity: 0;
+  }
+  41%,
+  44%,
+  72%,
+  70% {
+    opacity: 0.4;
+  }
+
+  73%,
+  98%,
+  99% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
